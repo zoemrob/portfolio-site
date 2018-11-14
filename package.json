@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "inferno": "^6.2.1",
+    "inferno-router": "^6.2.1",
     "inferno-scripts": "7.0.2"
   },
   "scripts": {
@@ -20,5 +21,8 @@
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ]
+  ],
+  "devDependencies": {
+    "inferno-devtools": "^6.2.1"
+  }
 }
