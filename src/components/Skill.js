@@ -1,16 +1,20 @@
-import {def} from '../utils';
+import {Component, linkEvent} from 'inferno';
 import {Link} from 'inferno-router';
+import Tooltip from './Tooltip';
+import {def} from '../utils';
+
 
 const Skill = ({skill}) => {
-    const {name, projectRef} = skill;
-    return (
-        <li>
-            <h2 className="skill-header">{name}</h2>
-            {def(projectRef) && (
-                <Link to={`/projects#${projectRef}`} />
-            )}
-        </li>
-
-    );
-};
+        const {name, projectRef, exp} = skill;
+        const tooltipText = def(exp) && (exp + (exp === 1 && '+') + ' years');
+        return (
+            <li>
+                {tooltipText ? (
+                    <Tooltip mainText={name} tooltipText={tooltipText}/>
+                ): (
+                    <h3 className="skill-header">{name}</h3>
+                )}
+            </li>
+        );
+}
 export default Skill;

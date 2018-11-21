@@ -1,0 +1,40 @@
+main {
+    display: flex;
+}
+
+.personal-container {
+    padding-top: 1rem;
+    width: 50%;
+    order: 1;
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+}
+
+.personal-container figure {
+    width: 100%;
+    height: 75%;
+    text-align: inherit;
+    margin: 0 auto;
+}
+
+.personal-container figure figcaption {
+    margin-bottom: 1rem;
+    font-size: 2rem;
+}
+
+.personal-container picture img {
+    max-height: 100%;
+    border-radius: 50%;
+    margin: 0 auto;
+}
+
+.skill-container {
+    width: 50%;
+    order: 2;
+    text-align: center;
+    height: auto;
+    overflow: auto;
+    /* testing */
+    /*background-color: rgba(0,0,0,0.1);*/
+}

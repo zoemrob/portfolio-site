@@ -2,6 +2,7 @@
 header {
     display: flex;
     background-color: #e6eeff;
+    height: 10vh;
 }
 
 header h1 {
@@ -35,11 +36,13 @@ header nav ul li {
 
 header nav ul li:hover,
 header nav ul li:active {
+    background-color: #d0e1ff;
     box-shadow: 0 7px 14px rgba(0,0,0,0.20), 0 7px 7px rgba(0,0,0,0.18);
 }
 
 header nav ul li a {
     display: flex;
+    text-align: center;
     align-items: center;
     padding: 1.75rem;
     text-decoration: none;

@@ -1,0 +1,27 @@
+.skill-holder {
+    padding: 0 1rem;
+    max-width: 60%;
+    margin: 0 auto;
+}
+
+.skills-list {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.skills-header {
+    text-align: center;
+    font-size: 2em;
+}
+
+.skills-list li {
+    text-align: center;
+    margin-bottom: 1rem;
+    background-color: #e6eeff;
+    padding: 1rem;
+}
+
+.skills-list li h3 {
+    position: relative;
+    display: inline-block;
+}
