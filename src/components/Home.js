@@ -20,17 +20,18 @@ const skillsSoft = [
 ];
 
 const imgSrcSet = [
-    'zoe-photo--cropped-2-large.jpg 805w',
-    'zoe-photo--cropped-2-medium.jpg 614w',
-    'zoe-photo--cropped-2-small.jpg 493w',
-    'zoe-photo--cropped-2-xsmall.jpg 360w'
+    'zoe-photo--cropped-2-xl.jpg 1275w',
+    'zoe-photo--cropped-2-large.jpg 678w',
+    'zoe-photo--cropped-2-small.jpg 484w',
+    'zoe-photo--cropped-2-xsmall.jpg 385w'
 ];
 
 const imgSizes = [
     '(max-width: 380px) 360px',
-    '(max-width: 420px) 360px',
-    '(max-width: 770px) 610px',
-    '(min-width: 1024px) 800px'
+    '(max-width: 420px) 400px',
+    '(max-width: 770px) 660px',
+    '(min-width: 1024px) 800px',
+    '(min-width: 1200px) 1200px'
 ];
 
 const Home = ({viewportSize}) => {
@@ -39,12 +40,13 @@ const Home = ({viewportSize}) => {
             <div className="personal-container">
                 <ImageContainer
                     figId="personal-img"
-                    figCap="Front End Web Developer"
+                    figCap="Full Stack Web Developer"
                     figCapPos="top"
                     imgAlt="A photo of Zoe Robertson"
                     imgSizes={imgSizes}
                     imgSrcSet={imgSrcSet}
                 />
+                <p>Where don't we put JavaScript nowadays?</p>
             </div>
             <div className="skill-container">
                 <SkillsHolder id="tech-skills" skillsTitle="Technologies" skills={skillsTech}/>

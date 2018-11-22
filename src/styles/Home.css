@@ -29,12 +29,34 @@ main {
     margin: 0 auto;
 }
 
+.personal-container p {
+    font-size: 1.5rem;
+    font-style: italic;
+    margin: 0 auto;
+}
+
 .skill-container {
     width: 50%;
     order: 2;
     text-align: center;
     height: auto;
     overflow: auto;
-    /* testing */
-    /*background-color: rgba(0,0,0,0.1);*/
+}
+
+@media screen and (max-width: 770px) {
+    main {
+        flex-wrap: wrap;
+    }
+
+    .personal-container {
+        width: 100%;
+    }
+
+    .personal-container p {
+        margin-top: 1em;
+    }
+
+    .skill-container {
+        width: 100%;
+    }
 }
