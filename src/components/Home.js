@@ -1,5 +1,8 @@
 import SkillsHolder from './SkillHolder';
 import ImageContainer from './ImageContainer';
+import PsuedoTyped from './PsuedoTyped';
+import {makeSkill} from "./Skill";
+import {makeAward} from "./Award";
 import '../styles/Home.css';
 
 const skillsTech = [
@@ -17,6 +20,21 @@ const skillsSoft = [
     {name: 'Self-Motivated Learner'},
     {name: 'Customer Service', exp: 5},
     {name: 'Technical Troubleshooting', exp: 3},
+];
+
+const awards = [
+    {
+        title: 'Udacity Front End Web Developer Nanodegree',
+        details: 'Earned a scholarship through Grow With Google for the Udacity Front End Web Developer Nanodgree, which covers a range of topics from Responsive Web Design to Front-end frameworks and Progressive Web Apps.',
+        certificateLink: 'https://confirm.udacity.com/ACVVDXUY',
+        date: 'November, 2018'
+    },
+    {
+        title: 'Triplebyte',
+        details: 'Passed the Triplebyte technical assessment and interview for Front End Engineering. 3% Acceptance Rate.',
+        certificateLink: 'https://triplebyte.com/certificate/RknBVwk',
+        date: 'November, 2018'
+    },
 ];
 
 const imgSrcSet = [
@@ -46,11 +64,19 @@ const Home = ({viewportSize}) => {
                     imgSizes={imgSizes}
                     imgSrcSet={imgSrcSet}
                 />
-                <p>Where don't we put JavaScript nowadays?</p>
+                <PsuedoTyped input="Where don't we put JavaScript nowadays?" node="p"/>
+                {/*<p>Where don't we put JavaScript nowadays?</p>*/}
             </div>
             <div className="skill-container">
-                <SkillsHolder id="tech-skills" skillsTitle="Technologies" skills={skillsTech}/>
-                <SkillsHolder id="soft-skills" skillsTitle="Soft Skills" skills={skillsSoft}/>
+                <SkillsHolder id="tech-skills" skillsTitle="Technologies">
+                    {skillsTech.map(makeSkill)}
+                </SkillsHolder>
+                <SkillsHolder id="soft-skills" skillsTitle="Soft Skills">
+                    {skillsSoft.map(makeSkill)}
+                </SkillsHolder>
+                <SkillsHolder id="certificates" skillsTitle="Certifications & Awards">
+                    {awards.map(makeAward)}
+                </SkillsHolder>
             </div>
         </main>
     );

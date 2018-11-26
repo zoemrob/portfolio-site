@@ -1,11 +1,8 @@
-import {Component, linkEvent} from 'inferno';
-import {Link} from 'inferno-router';
 import Tooltip from './Tooltip';
 import {def} from '../utils';
 
-
 const Skill = ({skill}) => {
-        const {name, projectRef, exp} = skill;
+        const {name, exp} = skill;
         const tooltipText = def(exp) && (exp + (exp === 1 && '+') + ' years');
         return (
             <li>
@@ -16,5 +13,8 @@ const Skill = ({skill}) => {
                 )}
             </li>
         );
-}
-export default Skill;
+};
+
+export const makeSkill = (skill, i) => (
+    <Skill key={skill + i} skill={skill} />
+);
