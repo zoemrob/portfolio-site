@@ -5,7 +5,7 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
-initDevTools();
+if (process.env.NODE_ENV !== 'production') initDevTools();
 render(
     <BrowserRouter>
         <App />

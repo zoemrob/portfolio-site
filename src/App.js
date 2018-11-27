@@ -2,7 +2,7 @@ import {Component} from 'inferno';
 import {Route} from 'inferno-router';
 import * as utils from './utils';
 import Header from './components/Header';
-import Home from './components/Home';
+import Home from './components/Home/Home';
 import './App.css';
 
 class App extends Component {

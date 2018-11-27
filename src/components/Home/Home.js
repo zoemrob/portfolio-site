@@ -1,9 +1,9 @@
 import SkillsHolder from './SkillHolder';
-import ImageContainer from './ImageContainer';
-import PsuedoTyped from './PsuedoTyped';
+import ImageContainer from '../ImageContainer';
+import PsuedoTyped from '../PsuedoTyped';
 import {makeSkill} from "./Skill";
 import {makeAward} from "./Award";
-import '../styles/Home.css';
+import '../../styles/Home.css';
 
 const skillsTech = [
     {name: 'JavaScript (ES6, Node.js)', exp: 1},
@@ -65,7 +65,6 @@ const Home = ({viewportSize}) => {
                     imgSrcSet={imgSrcSet}
                 />
                 <PsuedoTyped input="Where don't we put JavaScript nowadays?" node="p"/>
-                {/*<p>Where don't we put JavaScript nowadays?</p>*/}
             </div>
             <div className="skill-container">
                 <SkillsHolder id="tech-skills" skillsTitle="Technologies">

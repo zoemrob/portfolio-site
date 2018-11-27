@@ -1,5 +1,6 @@
 import {Component} from 'inferno';
 import {createElement} from 'inferno-create-element';
+import {def} from "../utils";
 
 export default class PsuedoTyped extends Component {
     constructor(props) {
@@ -31,6 +32,7 @@ export default class PsuedoTyped extends Component {
     render() {
         const {node} = this.props;
         const {curString} = this.state;
-        return createElement(node, null, curString);
+        const classNameProp = def(this.props.className) ? this.props.className : null;
+        return createElement(node, {className: classNameProp}, curString);
     }
 }

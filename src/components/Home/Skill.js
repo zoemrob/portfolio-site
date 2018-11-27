@@ -1,5 +1,5 @@
-import Tooltip from './Tooltip';
-import {def} from '../utils';
+import Tooltip from '../Tooltip';
+import {def} from '../../utils';
 
 const Skill = ({skill}) => {
         const {name, exp} = skill;

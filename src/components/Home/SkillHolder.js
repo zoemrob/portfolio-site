@@ -1,4 +1,4 @@
-import '../styles/SkillHolder.css';
+import '../../styles/SkillHolder.css';
 
 const SkillsHolder = ({id, skillsTitle, children}) => (
     <section id={id} className="skill-holder">

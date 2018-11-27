@@ -1,4 +1,4 @@
-import '../styles/Award.css';
+import '../../styles/Award.css';
 
 const Award = ({title, infoLink, details, certificateLink, date}) => {
     return (
