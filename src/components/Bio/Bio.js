@@ -17,7 +17,17 @@ const imgSizes = [
 const Bio = ({viewportSize}) => (
     <main>
         <div className="bio-container">
-            </h2>
+            <PsuedoTyped input="Made in Portland, OR" node="h2" className="bio-header"/>
+            <ImageContainer
+                figId="portland-pic"
+                figCap="The tech hub that's so indie, you probably haven't heard of it"
+                figCapPos="bottom"
+                imgAlt="Portland, OR sign"
+                imgSizes={imgSizes}
+                imgSrcSet={imgSrcSet}
+            />
         </div>
     </main>
 );
+
+export default Bio;

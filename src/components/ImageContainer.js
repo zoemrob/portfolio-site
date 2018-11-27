@@ -1,4 +1,5 @@
 const imagePrefix = '/images/';
+const prefix = img => imagePrefix + img;
 
 const ImageContainer = ({figId, figCap = '', figCapPos = 'top', imgAlt, imgSrcSet, imgSizes = null}) => {
     const figCaption = (<figcaption>{figCap}</figcaption>);
@@ -7,8 +8,8 @@ const ImageContainer = ({figId, figCap = '', figCapPos = 'top', imgAlt, imgSrcSe
             {figCapPos === 'top' && figCaption}
             <picture>
                 <img
-                    srcSet={imagePrefix + imgSrcSet.join(',')}
-                    sizes={imgSizes && imgSizes.join(',')}
+                    srcSet={imgSrcSet && imgSrcSet.map(prefix).join(',')}
+                    sizes={imgSizes && imgSizes.map(prefix).join(',')}
                     alt={imgAlt}
                     title={imgAlt}
                 />

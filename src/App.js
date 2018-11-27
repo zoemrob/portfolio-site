@@ -4,6 +4,7 @@ import * as utils from './utils';
 import Header from './components/Header';
 import Home from './components/Home/Home';
 import './App.css';
+import Bio from "./components/Bio/Bio";
 
 class App extends Component {
     constructor(props) {
@@ -37,6 +38,7 @@ class App extends Component {
             <div className="App">
                 <Header />
                 <Route exact path="/" component={Home}/>
+                <Route path="/bio" component={Bio}/>
             </div>
         );
     }
