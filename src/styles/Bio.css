@@ -1,0 +1,28 @@
+@media screen and (min-width: 1200px) {
+    .bio-container {
+        width: 80%;
+        max-width: 1200px;
+    }
+
+    .bio-header {
+        position: sticky;
+        top: 0.83em;
+    }
+}
+
+main {
+    text-align: center;
+    width: 100%;
+    overflow: auto;
+}
+
+.bio-container {
+    margin: auto;
+    text-align: inherit;
+}
+
+.bio-header {
+    font-family: 'Gentium Book Basic', 'Times New Roman', serif;
+    font-size: 4rem;
+}
+

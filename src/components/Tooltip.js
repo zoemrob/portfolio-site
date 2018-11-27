@@ -1,4 +1,3 @@
-import {def} from '../utils';
 import '../styles/Tooltip.css';
 
 const Tooltip = ({mainText, tooltipText}) => (

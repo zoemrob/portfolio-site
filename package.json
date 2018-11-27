@@ -5,6 +5,7 @@
   "dependencies": {
     "inferno": "^6.2.1",
     "inferno-create-element": "^6.3.1",
+    "inferno-helmet": "^5.2.1",
     "inferno-router": "^6.2.1",
     "inferno-scripts": "7.0.2"
   },

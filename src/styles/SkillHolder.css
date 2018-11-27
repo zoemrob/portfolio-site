@@ -12,6 +12,7 @@
 .skills-header {
     text-align: center;
     font-size: 2em;
+    font-family: 'Gentium Book Basic', 'Times New Roman', serif;
 }
 
 .skills-list li {
@@ -19,6 +20,7 @@
     margin-bottom: 1rem;
     background-color: #e6eeff;
     padding: 1rem;
+    font-family: 'Open Sans', sans-serif;
 }
 
 .skills-list li h3 {

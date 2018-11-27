@@ -9,8 +9,10 @@ header h1 {
     order: 1;
     padding: 1.5rem 0 1.5rem 2.5rem;
     width: 50%;
-    font-size: 3rem;
     margin: 0;
+    color: #222;
+    font-size: 3rem;
+    font-family: 'Gentium Book Basic', 'Times New Roman', serif;
 }
 
 header nav {
@@ -28,7 +30,6 @@ header nav ul {
 
 header nav ul li {
     flex-grow: 1;
-    /*padding: 1rem 1.75rem 1rem 1.75rem;*/
     font-size: 2rem;
     transition: all 0.3s cubic-bezier(.25,.8,.25,1);
     position: relative;
@@ -47,4 +48,6 @@ header nav ul li a {
     align-items: center;
     padding: 1.75rem;
     text-decoration: none;
+    color: #222;
+    font-family: 'Open Sans', sans-serif;
 }

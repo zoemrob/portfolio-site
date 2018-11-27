@@ -1,9 +1,10 @@
 import {Component} from 'inferno';
 import {Route} from 'inferno-router';
+import {Helmet} from 'inferno-helmet';
 import * as utils from './utils';
+import './App.css';
 import Header from './components/Header';
 import Home from './components/Home/Home';
-import './App.css';
 import Bio from "./components/Bio/Bio";
 
 class App extends Component {
@@ -16,7 +17,7 @@ class App extends Component {
         this._isMounted = false;
     }
 
-    _widthHandler = (e) => {
+    _widthHandler = () => {
         console.log(this.state.viewportSize);
         this.setState({viewportSize: utils.checkWidth()});
     };
@@ -36,6 +37,9 @@ class App extends Component {
     render() {
         return (
             <div className="App">
+                <Helmet>
+                    <link rel="prefetch" href="/images/portland-sign_grmtn4_c_scale,w_1271.jpg" />
+                </Helmet>
                 <Header />
                 <Route exact path="/" component={Home}/>
                 <Route path="/bio" component={Bio}/>
