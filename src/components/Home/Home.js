@@ -38,7 +38,6 @@ const awards = [
 ];
 
 const imgSrcSet = [
-    'zoe-photo--cropped-2-xl.jpg 1275w',
     'zoe-photo--cropped-2-large.jpg 678w',
     'zoe-photo--cropped-2-small.jpg 484w',
     'zoe-photo--cropped-2-xsmall.jpg 385w'
@@ -49,7 +48,6 @@ const imgSizes = [
     '(max-width: 420px) 400px',
     '(max-width: 770px) 660px',
     '(min-width: 1024px) 800px',
-    '(min-width: 1200px) 1200px'
 ];
 
 const Home = ({viewportSize}) => {

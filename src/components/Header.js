@@ -6,6 +6,7 @@ const Header = ({viewportSize}) => (
         <h1>
             Zoe Robertson
         </h1>
+        {viewportSize === ''}
         <nav>
             <ul>
                 <li><Link to="/">Home</Link></li>

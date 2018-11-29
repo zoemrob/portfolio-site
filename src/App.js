@@ -18,7 +18,7 @@ class App extends Component {
     }
 
     _widthHandler = () => {
-        console.log(this.state.viewportSize);
+        //console.log(this.state.viewportSize);
         this.setState({viewportSize: utils.checkWidth()});
     };
 
@@ -26,6 +26,10 @@ class App extends Component {
         this._isMounted = true;
 
         window.addEventListener('resize', this._widthHandler);
+    }
+
+    componentDidUpdate(prevProps, prevState) {
+        if (prevState.viewportSize !== this.state.viewportSize) console.log(this.state.viewportSize);
     }
 
     componentWillUnmount() {

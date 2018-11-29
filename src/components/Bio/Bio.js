@@ -12,8 +12,8 @@ const imgSrcSet = [
 ];
 
 const imgSizes = [
-    '(min-width: 1200px) 100vw, 1200px',
-    '(max-width: 1199px) 100vw, 1055px',
+    //'(min-width: 1200px) 100vw, 1200px',
+    '(max-width: 1600px) 100vw, 1055px',
 ];
 
 const Bio = ({viewportSize}) => (

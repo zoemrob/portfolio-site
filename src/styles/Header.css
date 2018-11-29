@@ -29,9 +29,9 @@ header nav ul {
 }
 
 header nav ul li {
-    flex-grow: 1;
-    font-size: 2rem;
-    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+    /*flex-grow: 1;*/
+    width: 25%;
+    transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
     position: relative;
     z-index: 5;
 }
@@ -39,15 +39,60 @@ header nav ul li {
 header nav ul li:hover,
 header nav ul li:active {
     background-color: #d0e1ff;
-    box-shadow: 0 7px 14px rgba(0,0,0,0.20), 0 7px 7px rgba(0,0,0,0.18);
+    box-shadow: 0 7px 14px rgba(0, 0, 0, 0.20), 0 7px 7px rgba(0, 0, 0, 0.18);
 }
 
 header nav ul li a {
     display: flex;
     text-align: center;
     align-items: center;
-    padding: 1.75rem;
     text-decoration: none;
     color: #222;
     font-family: 'Open Sans', sans-serif;
+    justify-content: center;
+
+    /* changes with viewport */
+    padding: calc((10vh - 2rem) / 2);
+    font-size: 2rem;
+    line-height: 2rem;
 }
+
+@media screen and (max-width: 1000px) {
+    header h1 {
+        font-size: 2rem;
+        width: 33%;
+    }
+
+    header nav {
+        width: 66%;
+    }
+
+    header nav ul li a {
+        padding: calc((10vh - 1.2rem) / 2);
+        font-size: 1.2rem;
+        line-height: 1.2rem;
+    }
+}
+
+@media screen and (min-width: 1001px) {
+    header nav ul li {
+        width: initial;
+        flex-grow: 1;
+    }
+
+    header nav ul li a {
+        text-align: center;
+        margin: auto;
+    }
+}
+
+@media screen and (min-width: 1001px) and (max-width: 1200px) {
+    header nav ul li a {
+        padding: calc((10vh - 1.5rem) / 2);
+        font-size: 1.5rem;
+        line-height: 1.5rem;
+    }
+}
+
+
+/* TODO: Add Hamburger at max-width: 769px & set font-size to 1.5rem*/
