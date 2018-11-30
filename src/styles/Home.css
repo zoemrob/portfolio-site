@@ -26,6 +26,7 @@ main {
 
 .personal-container picture img {
     max-height: 100%;
+    max-width: 100%;
     border-radius: 50%;
     margin: 0 auto;
 }
@@ -51,6 +52,10 @@ main {
 
     .personal-container {
         width: 100%;
+    }
+
+    .personal-container figure {
+        width: calc(100% - 2rem);
     }
 
     .personal-container p {

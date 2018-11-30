@@ -3,7 +3,7 @@ import {Route} from 'inferno-router';
 import {Helmet} from 'inferno-helmet';
 import * as utils from './utils';
 import './App.css';
-import Header from './components/Header';
+import HeaderState from './components/HeaderState';
 import Home from './components/Home/Home';
 import Bio from "./components/Bio/Bio";
 
@@ -13,8 +13,6 @@ class App extends Component {
         this.state = {
             viewportSize: utils.checkWidth(),
         };
-
-        this._isMounted = false;
     }
 
     _widthHandler = () => {
@@ -23,8 +21,6 @@ class App extends Component {
     };
 
     componentDidMount() {
-        this._isMounted = true;
-
         window.addEventListener('resize', this._widthHandler);
     }
 
@@ -33,8 +29,6 @@ class App extends Component {
     }
 
     componentWillUnmount() {
-        this._isMounted = false;
-
         window.removeEventListener('resize', this._widthHandler);
     }
 
@@ -44,7 +38,7 @@ class App extends Component {
                 <Helmet>
                     <link rel="prefetch" href="/images/portland-sign_grmtn4_c_scale,w_1271.jpg" />
                 </Helmet>
-                <Header />
+                <HeaderState />
                 <Route exact path="/" component={Home}/>
                 <Route path="/bio" component={Bio}/>
             </div>
