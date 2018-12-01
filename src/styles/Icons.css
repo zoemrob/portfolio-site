@@ -1,0 +1,47 @@
+.icon {
+    background: url("/images/icon-sprite-26.jpg");
+    display: inline-block;
+    height: 33px;
+    width: 33px;
+    border-radius: 50%;
+}
+
+.facebook {
+    background-position: -226px -55px;
+}
+
+.facebook:hover,
+.facebook:active,
+.facebook:focus {
+    background-position: -226px -129px;
+}
+
+.linkedin {
+    background-position: -398px -54px;
+}
+
+.linkedin:hover,
+.linkedin:active,
+.linkedin:focus {
+    background-position: -398px -129px;
+}
+
+.mail {
+    background-position: -55px -54px;
+}
+
+.mail:hover,
+.mail:active,
+.mail:focus {
+    background-position: -55px -129px;
+}
+
+.github {
+    background-position: -456px -54px;
+}
+
+.github:hover,
+.github:active,
+.github:focus {
+    background-position: -456px -129px;
+}

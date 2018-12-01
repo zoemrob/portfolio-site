@@ -3,10 +3,11 @@ import ImageContainer from '../ImageContainer';
 import PsuedoTyped from '../PsuedoTyped';
 import {makeSkill} from "./Skill";
 import {makeAward} from "./Award";
+import Icon, {icons} from '../Icons';
 import '../../styles/Home.css';
 
 const skillsTech = [
-    {name: 'JavaScript (ES6, Node.js)', exp: 1},
+    {name: 'JavaScript (ES6/7, Node.js)', exp: 1},
     {name: 'React.js (& Inferno.js)'},
     {name: 'PHP (7.x)', exp: 1},
     {name: 'MongoDB', exp: 1},
@@ -50,33 +51,41 @@ const imgSizes = [
     '(min-width: 1024px) 800px',
 ];
 
-const Home = ({viewportSize}) => {
-    return (
-        <main>
-            <div className="personal-container">
-                <ImageContainer
-                    figId="personal-img"
-                    figCap="Full Stack Web Developer"
-                    figCapPos="top"
-                    imgAlt="A photo of Zoe Robertson"
-                    imgSizes={imgSizes}
-                    imgSrcSet={imgSrcSet}
-                />
-                <PsuedoTyped input="Where don't we put JavaScript nowadays?" node="p"/>
+const Home = () => (
+    <main>
+        <div className="personal-container">
+            <ImageContainer
+                figId="personal-img"
+                figCap="Front End Web Developer"
+                figCapPos="top"
+                imgAlt="A photo of Zoe Robertson"
+                imgSizes={imgSizes}
+                imgSrcSet={imgSrcSet}
+            />
+            <PsuedoTyped
+                input='You can use JavaScript for that...'
+                node="p"
+                blinkOnFinish={false}
+                $props={{className: 'home-typed'}}
+            />
+            <div className="icon-holder">
+                <Icon name={icons.gh} link="https://github.com/zoemrob"/>
+                <Icon name={icons.ln} link="https://www.linkedin.com/in/zoe-robertson/"/>
+                <Icon name={icons.fb} link="https://www.facebook.com/zoe.m.robertson"/>
             </div>
-            <div className="skill-container">
-                <SkillsHolder id="tech-skills" skillsTitle="Technologies">
-                    {skillsTech.map(makeSkill)}
-                </SkillsHolder>
-                <SkillsHolder id="soft-skills" skillsTitle="Soft Skills">
-                    {skillsSoft.map(makeSkill)}
-                </SkillsHolder>
-                <SkillsHolder id="certificates" skillsTitle="Certifications & Awards">
-                    {awards.map(makeAward)}
-                </SkillsHolder>
-            </div>
-        </main>
-    );
-};
+        </div>
+        <div className="skill-container">
+            <SkillsHolder id="tech-skills" skillsTitle="Technologies">
+                {skillsTech.map(makeSkill)}
+            </SkillsHolder>
+            <SkillsHolder id="soft-skills" skillsTitle="Soft Skills">
+                {skillsSoft.map(makeSkill)}
+            </SkillsHolder>
+            <SkillsHolder id="certificates" skillsTitle="Certifications & Awards">
+                {awards.map(makeAward)}
+            </SkillsHolder>
+        </div>
+    </main>
+);
 
 export default Home;

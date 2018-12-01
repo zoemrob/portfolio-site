@@ -1,5 +1,5 @@
 const imagePrefix = '/images/';
-const prefix = img => imagePrefix + img;
+export const prefix = img => imagePrefix + img;
 
 const ImageContainer = ({figId, figCap = '', figCapPos = 'top', imgAlt, imgSrcSet, imgSizes = null}) => {
     const figCaption = (<figcaption>{figCap}</figcaption>);

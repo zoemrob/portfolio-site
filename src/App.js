@@ -6,6 +6,7 @@ import './App.css';
 import HeaderState from './components/HeaderState';
 import Home from './components/Home/Home';
 import Bio from "./components/Bio/Bio";
+import {prefix} from "./components/ImageContainer";
 
 class App extends Component {
     constructor(props) {
@@ -36,7 +37,7 @@ class App extends Component {
         return (
             <div className="App">
                 <Helmet>
-                    <link rel="prefetch" href="/images/portland-sign_grmtn4_c_scale,w_1271.jpg" />
+                    <link rel="prefetch" href={prefix("portland-sign_grmtn4_c_scale,w_1271.jpg")} />
                 </Helmet>
                 <HeaderState />
                 <Route exact path="/" component={Home}/>
