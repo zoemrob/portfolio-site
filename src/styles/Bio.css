@@ -2,17 +2,27 @@ main {
     text-align: center;
     width: 100%;
     overflow: auto;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .bio-container {
+    order: 1;
     margin: 0 auto;
     text-align: inherit;
     width: 100%;
+    font-family: 'Open Sans', 'Arial', sans-serif;
 }
 
 .bio-header {
+    margin: 0;
+    padding: 0.75em 0;
     font-family: 'Gentium Book Basic', 'Times New Roman', serif;
     font-size: 4rem;
+}
+
+#portland-pic {
+    margin: 0 auto;
 }
 
 #portland-pic img {
@@ -20,7 +30,6 @@ main {
 }
 
 #portland-pic figcaption {
-    font-family: 'Open Sans', 'Arial', sans-serif;
     font-weight: bold;
     padding: 1rem 2rem;
     font-size: 1.3rem;
@@ -49,6 +58,92 @@ main {
     top: -0.20em;
 }
 
+/** article.bio-art section */
+.bio-art {
+    margin-bottom: 3rem;
+}
+
+.bio-art a {
+    text-decoration: none;
+    font-size: 1.1em;
+    color: #0044bf;
+}
+
+.bio-art h3 {
+    font-size: 2rem;
+    font-weight: initial;
+}
+
+.bio-art p {
+    width: 90%;
+    margin: auto;
+    font-size: 1.3rem;
+    line-height: 2rem;
+    text-indent: 2rem;
+    text-align: justify;
+}
+
+/** First paragraph */
+#p1 ul {
+    list-style-type: none;
+    width: 90%;
+    margin-top: 0;
+    padding: 1rem;
+}
+
+#p1 li {
+    position: relative;
+    font-family: Monospaced, sans-serif;
+}
+
+#p1 li::before {
+    content: '\A';
+    white-space: pre;
+}
+
+#p1 li:first-child::after,
+#p1 li:nth-child(2)::after,
+#p1 li:last-child::after {
+    position: absolute;
+    margin: 0;
+    font-size: 3rem;
+    color: rgba(0,0,0,0.15);
+}
+
+#p1 li:first-child::after {
+    content: "?:";
+}
+
+#p1 li:nth-child(2)::after {
+    left: -4rem;
+    content: '&&';
+}
+
+#p1 li:last-child::after {
+    content: '||';
+}
+
+#p3 span:first-child {
+    font-size: larger;
+    font-weight: bold;
+}
+
+#p2,
+#p3,
+#p4 {
+    margin: 0.5rem auto;
+}
+
+#p-footer {
+    font-family: 'Gentium Book Basic', 'Times New Roman', serif;
+    font-size: 2rem;
+}
+
+footer {
+    order: 2;
+    width: 100%;
+}
+
 @media screen and (max-width: 460px) {
     #portland-pic figcaption {
         font-size: 0.9rem;
@@ -58,6 +153,7 @@ main {
 @media screen and (max-width: 700px) {
     .bio-header {
         font-size: 2.5rem;
+        background-color: #e6eeff;
     }
 
     #portland-pic {
@@ -73,6 +169,14 @@ main {
     #portland-pic figcaption {
         font-size: 1rem;
     }
+
+    .bio-art p {
+        font-size: 1rem;
+    }
+
+    #p-footer {
+        font-size: 1.5rem;
+    }
 }
 
 @media screen and (min-width: 1200px) {
@@ -84,6 +188,14 @@ main {
     #portland-pic figcaption {
         width: 60%;
         margin: 2rem auto;
+    }
+
+    .bio-art p {
+        line-height: 2rem;
+    }
+
+    .bio-art p {
+        width: 75%;
     }
 }
 

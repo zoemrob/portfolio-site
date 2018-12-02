@@ -3,7 +3,7 @@ import ImageContainer from '../ImageContainer';
 import PsuedoTyped from '../PsuedoTyped';
 import {makeSkill} from "./Skill";
 import {makeAward} from "./Award";
-import Icon, {icons} from '../Icons';
+import IconHolder from "../IconHolder";
 import '../../styles/Home.css';
 
 const skillsTech = [
@@ -68,11 +68,7 @@ const Home = () => (
                 blinkOnFinish={false}
                 $props={{className: 'home-typed'}}
             />
-            <div className="icon-holder">
-                <Icon name={icons.gh} link="https://github.com/zoemrob"/>
-                <Icon name={icons.ln} link="https://www.linkedin.com/in/zoe-robertson/"/>
-                <Icon name={icons.fb} link="https://www.facebook.com/zoe.m.robertson"/>
-            </div>
+            <IconHolder/>
         </div>
         <div className="skill-container">
             <SkillsHolder id="tech-skills" skillsTitle="Technologies">
@@ -84,6 +80,9 @@ const Home = () => (
             <SkillsHolder id="certificates" skillsTitle="Certifications & Awards">
                 {awards.map(makeAward)}
             </SkillsHolder>
+            <footer>
+                <div className="footer">Zoe Robertson 2018</div>
+            </footer>
         </div>
     </main>
 );

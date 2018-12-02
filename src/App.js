@@ -1,10 +1,10 @@
 import {Route} from 'inferno-router';
 import {Helmet} from 'inferno-helmet';
-import './App.css';
 import HeaderState from './components/HeaderState';
 import Home from './components/Home/Home';
 import Bio from "./components/Bio/Bio";
 import {prefix} from "./components/ImageContainer";
+import './App.css';
 
 const App = () => (
     <div className="App">
