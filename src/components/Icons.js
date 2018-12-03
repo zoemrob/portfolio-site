@@ -7,8 +7,8 @@ export const icons = {
     e: 'mail'
 };
 const ic = 'icon';
-const Icon = ({name, link = "#"}) => (
-    <a href={link}>
+const Icon = ({name, link = "#", id = null}) => (
+    <a id={id} href={link}>
         <i role="button" className={`${ic} ${name}`} />
     </a>
 );

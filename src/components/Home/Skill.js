@@ -15,6 +15,8 @@ const Skill = ({skill}) => {
         );
 };
 
-export const makeSkill = (skill, i) => (
-    <Skill key={skill + i} skill={skill} />
+const makeKey = skill => skill.name.replace(' ','');
+
+export const makeSkill = (skill) => (
+    <Skill key={makeKey(skill)} skill={skill} />
 );

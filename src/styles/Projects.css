@@ -1,0 +1,24 @@
+main {
+    text-align: center;
+}
+
+.project-list {
+    list-style-type: none;
+    width: 80%;
+    padding: 1rem;
+    margin: 0 auto;
+}
+
+.project-item {
+    width: 100%;
+}
+
+@media screen and (max-width: 700px) {
+    .project-list {
+        width: 100%;
+    }
+
+    .project-item {
+
+    }
+}

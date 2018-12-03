@@ -1,8 +1,11 @@
+import {empty} from "../utils";
+
 const imagePrefix = '/images/';
+
 export const prefix = img => imagePrefix + img;
 
-const ImageContainer = ({figId, figCap = '', figCapPos = 'top', imgAlt, imgSrcSet, imgSizes = null}) => {
-    const figCaption = (<figcaption>{figCap}</figcaption>);
+const ImageContainer = ({figId, imgAlt, imgSrcSet, figCap = '', figCapPos = 'top', imgSizes = null, lazy = false}) => {
+    const figCaption = !empty(figCap) ? (<figcaption>{figCap}</figcaption>) : null;
     return (
         <figure id={figId}>
             {figCapPos === 'top' && figCaption}
@@ -12,6 +15,7 @@ const ImageContainer = ({figId, figCap = '', figCapPos = 'top', imgAlt, imgSrcSe
                     sizes={imgSizes && imgSizes.map(prefix).join(',')}
                     alt={imgAlt}
                     title={imgAlt}
+                    className={lazy ? "lazy" : null}
                 />
             </picture>
             {figCapPos === 'bottom' && figCaption}
