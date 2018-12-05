@@ -3,10 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "inferno": "^6.2.1",
+    "inferno": "^6.3.1",
     "inferno-create-element": "^6.3.1",
     "inferno-helmet": "^5.2.1",
-    "inferno-router": "^6.2.1",
+    "inferno-router": "^6.3.1",
     "inferno-scripts": "7.0.2"
   },
   "scripts": {
@@ -25,6 +25,6 @@
     "not op_mini all"
   ],
   "devDependencies": {
-    "inferno-devtools": "^6.2.1"
+    "inferno-devtools": "^6.3.1"
   }
 }

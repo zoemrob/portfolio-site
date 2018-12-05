@@ -1,6 +1,6 @@
 import ImageContainer from "../ImageContainer";
 import Icon, {icons} from "../Icons";
-import {makeRepoLink, makeIdWithMixin, empty, makeLiveLink} from '../../utils';
+import {makeRepoLink, makeIdWithMixin, empty} from '../../utils';
 
 const makeAlt = title => `A ${title} screenshot.`;
 
@@ -25,7 +25,7 @@ const Project = ({title, desc, repoLink, imgs = [], imgSizes = [], liveLink = ''
             />
             <label className="icon-label" htmlFor={makeIdWithMixin(title, 'icon')}>Repo Link</label>
         </div>
-        {!empty(liveLink) && <a className="live-link" href={makeLiveLink(liveLink)}>Live Example</a>}
+        {!empty(liveLink) && <a className="live-link" href={liveLink}>Live Example</a>}
     </li>
 );
 
