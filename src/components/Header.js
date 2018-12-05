@@ -1,4 +1,5 @@
-import {Link} from 'inferno-router';
+import React from 'react';
+import {Link} from 'react-router-dom';
 import HamburgerIcon from './HamburgerIcon';
 import '../styles/Header.css';
 

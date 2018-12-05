@@ -1,3 +1,4 @@
+import React from 'react';
 import ImageContainer from '../ImageContainer';
 import PsuedoTyped from '../PsuedoTyped';
 import Rule from "../Rule";
@@ -38,12 +39,12 @@ const Bio = () => (
                 <h3>I grew up in Portland,</h3>
                 <p id="p1">
                     The home of <a href="https://www.townshendstea.com/">Townshend's Tea Company</a>, <a href="http://oakspark.com/site/roller-skating-rink.html">Oaks Park Roller Rink</a>, <a href="https://www.stumptowncoffee.com/">Stumptown Coffee Roasters</a>, and <a href="https://www.youtube.com/channel/UCBTTI-zUgbt8whLszMqjvZw">The Unipiper</a>. As such, I developed a standard bias against <strong>The Mainstream</strong> <em>(Portland's greatest enemy)</em> and a healthy measure of non-conformity. These values spilled over into my career as a developer. While I've resigned that sometimes the <em>standard</em> way to do something is in fact the right way, I approach every problem asking myself:
-                    <ul>
-                        <li>"Is there a better way to do this?",</li>
-                        <li>"Will this implementation work for future requirements?",</li>
-                        <li>and the developer's creed, "Can this be automated?"</li>
-                    </ul>
                 </p>
+                <ul>
+                    <li>"Is there a better way to do this?",</li>
+                    <li>"Will this implementation work for future requirements?",</li>
+                    <li>and the developer's creed, "Can this be automated?"</li>
+                </ul>
                 <p id="p2">
                     My journey to web development started with a kind of personal accounting. I was at a new stage in life, I had accumulated a handful of entry-level tech jobs on my resumé, but did not have any clear career path moving forward. I recall reading an article that shocked me with a statistic: <em>"...it’s projected that 1.4 million positions will be open in computing with only 400,000 computer science grads."</em> (<a href="https://techcrunch.com/2016/01/12/unlocking-trapped-engineers/">source</a>). Programming had always fascinated me, and I remember my Intro to Web Development course in High School had been great, but I had always written it off as something I could only do with a college degree. Inspired, I decided to give it a shot and enrolled in the <a href="https://flatironschool.com/free-courses/coding-bootcamp-prep/">Flatiron School Bootcamp Prep</a> course online.
                 </p>

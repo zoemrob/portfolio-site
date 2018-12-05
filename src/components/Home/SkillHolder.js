@@ -1,3 +1,4 @@
+import React from 'react';
 import '../../styles/SkillHolder.css';
 
 const SkillsHolder = ({id, skillsTitle, children}) => (

@@ -1,9 +1,10 @@
-import {Route} from 'inferno-router';
-import {Helmet} from 'inferno-helmet';
-import HeaderState from './components/HeaderState';
-import Home from './components/Home/Home';
-import Bio from './components/Bio/Bio';
-import LazyProjects from './components/Projects/Projects';
+import React from 'react';
+import {Route} from 'react-router-dom';
+import {Helmet} from 'react-helmet';
+import HeaderState from "./components/HeaderState";
+import Home from "./components/Home/Home";
+import Bio from "./components/Bio/Bio";
+import LazyProjects from "./components/Projects/Projects";
 import {prefix} from './components/ImageContainer';
 import './App.css';
 

@@ -1,6 +1,7 @@
+import React from 'react';
 import ImageContainer from "../ImageContainer";
 import Icon, {icons} from "../Icons";
-import {makeRepoLink, makeIdWithMixin, empty} from '../../utils';
+import {makeRepoLink, makeIdWithMixin, empty} from '../../../../portfolio-site/src/utils';
 
 const makeAlt = title => `A ${title} screenshot.`;
 

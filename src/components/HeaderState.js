@@ -1,10 +1,5 @@
-import {Component, linkEvent} from 'inferno';
+import React, {Component} from 'react';
 import Header, {navClasses} from './Header';
-
-function handleClick(instance) {
-    console.log(instance.state.navOpen);
-    instance.setState({navOpen: !instance.state.navOpen});
-}
 
 const burgerId = "hamburger-btn";
 // todo: handle clicks outside of target node to set navOpen: false, look into linkEvent to window
@@ -17,6 +12,8 @@ export default class HeaderState extends Component {
             navOpen: false
         };
     }
+
+    handleClick = () => this.setState({navOpen: !this.state.navOpen});
 
     checkOutsideClick = e => {
         if (e.target.className === navClasses || e.target.parentElement.className === navClasses) {
@@ -40,6 +37,6 @@ export default class HeaderState extends Component {
     }
 
     render() {
-        return <Header handler={linkEvent(this, handleClick)} {...this.state}/>;
+        return <Header handler={this.handleClick} {...this.state}/>;
     }
 }

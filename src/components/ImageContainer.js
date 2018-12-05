@@ -1,4 +1,5 @@
-import {empty} from "../utils";
+import React from 'react';
+import {empty} from "../../../portfolio-site/src/utils";
 
 const imagePrefix = '/images/';
 

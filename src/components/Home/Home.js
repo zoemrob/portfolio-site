@@ -1,3 +1,4 @@
+import React from 'react';
 import SkillsHolder from './SkillHolder';
 import ImageContainer from '../ImageContainer';
 import PsuedoTyped from '../PsuedoTyped';

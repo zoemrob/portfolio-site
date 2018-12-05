@@ -84,46 +84,49 @@ main {
 }
 
 /** First paragraph */
-#p1 ul {
+.bio-art ul {
     list-style-type: none;
+    font-size: 1.3rem;
+    line-height: 2rem;
+    text-indent: 2rem;
     width: 90%;
     margin-top: 0;
     padding: 1rem;
 }
 
-#p1 li {
+.bio-art li {
     position: relative;
     font-family: Monospaced, sans-serif;
 }
 
-#p1 li::before {
+.bio-art li::before {
     content: '\A';
     white-space: pre;
 }
 
-#p1 li:first-child::after,
-#p1 li:nth-child(2)::after,
-#p1 li:last-child::after {
+.bio-art li:first-child::after,
+.bio-art li:nth-child(2)::after,
+.bio-art li:last-child::after {
     position: absolute;
     margin: 0;
     font-size: 3rem;
     color: rgba(0,0,0,0.15);
 }
 
-#p1 li:first-child::after {
+.bio-art li:first-child::after {
     content: "?:";
 }
 
-#p1 li:nth-child(2)::after {
-    left: -4rem;
+.bio-art li:nth-child(2)::after {
+    left: -2rem;
     content: '&&';
 }
 
-#p1 li:last-child::after {
+.bio-art li:last-child::after {
     content: '||';
 }
 
-#p3 span:first-child {
+.bio-art span:first-child {
     font-size: larger;
     font-weight: bold;
 }

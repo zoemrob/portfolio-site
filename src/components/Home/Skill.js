@@ -1,5 +1,6 @@
+import React from 'react';
 import Tooltip from '../Tooltip';
-import {def} from '../../utils';
+import {def} from '../../../../portfolio-site/src/utils';
 
 const Skill = ({skill}) => {
         const {name, exp} = skill;

@@ -1,3 +1,4 @@
+import React from 'react';
 import '../../styles/Award.css';
 
 const Award = ({title, infoLink, details, certificateLink, date}) => {

@@ -3,28 +3,25 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "inferno": "^6.3.1",
-    "inferno-create-element": "^6.3.1",
-    "inferno-helmet": "^5.2.1",
-    "inferno-router": "^6.3.1",
-    "inferno-scripts": "7.0.2"
+    "react": "^16.6.3",
+    "react-dom": "^16.6.3",
+    "react-helmet": "^5.2.0",
+    "react-router-dom": "^4.3.1",
+    "react-scripts": "2.1.1"
   },
   "scripts": {
-    "start": "inferno-scripts start",
-    "build": "inferno-scripts build",
-    "test": "inferno-scripts test",
-    "eject": "inferno-scripts eject"
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
   },
   "eslintConfig": {
-    "extends": "inferno-app"
+    "extends": "react-app"
   },
   "browserslist": [
     ">0.2%",
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ],
-  "devDependencies": {
-    "inferno-devtools": "^6.3.1"
-  }
+  ]
 }

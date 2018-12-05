@@ -1,3 +1,4 @@
+import React from 'react';
 import '../styles/Rule.css';
 
 const Rule = ({name = ''}) => (

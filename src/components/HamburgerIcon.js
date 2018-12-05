@@ -1,3 +1,4 @@
+import React from 'react';
 import '../styles/HamburgerIcon.css';
 
 const HamburgerIcon = ({navOpen, handler}) => {
@@ -10,9 +11,9 @@ const HamburgerIcon = ({navOpen, handler}) => {
              onClick={handler}
              role="button"
         >
-            <div className="bar1"></div>
-            <div className="bar2"></div>
-            <div className="bar3"></div>
+            <div className="bar1"/>
+            <div className="bar2"/>
+            <div className="bar3"/>
         </div>
     );
 };

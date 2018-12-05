@@ -1,6 +1,8 @@
+import React from 'react';
 import {withLazyLoad} from "../withLazyLoad";
 import Project from "./Project";
 import '../../styles/Projects.css';
+import {makeIdWithMixin} from "../../utils";
 
 const projectData = [
     {
@@ -32,7 +34,9 @@ const Projects = () => {
         <main>
             <ul className="project-list">
                 {projectData.map(proj => (
-                    <Project {...proj} />
+                    <Project key={makeIdWithMixin(proj.title, 'project')}
+                             {...proj}
+                    />
                 ))}
             </ul>
         </main>

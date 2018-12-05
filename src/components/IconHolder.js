@@ -1,3 +1,4 @@
+import React from 'react';
 import Icon, {icons} from "./Icons";
 import '../styles/IconHolder.css';
 

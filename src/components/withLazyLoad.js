@@ -1,3 +1,5 @@
+import React from 'react';
+
 function lazyLoad() {
     let lazyImages = [].slice.call(document.querySelectorAll("img.lazy"));
 
@@ -55,12 +57,10 @@ function lazyLoad() {
 }
 
 export function withLazyLoad(WrappedComponent) {
-    return function (props) {
-        return (
-            <WrappedComponent
-                onComponentDidMount={lazyLoad}
-                {...props}
-            />
-        );
-    }
+    return (props) => (
+        <WrappedComponent
+            onComponentDidMount={lazyLoad}
+            {...props}
+        />
+    );
 }
