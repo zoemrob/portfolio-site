@@ -3,7 +3,7 @@ import PsuedoTyped from "../components/PsuedoTyped";
 
 const CURSOR = '|';
 
-function usePsuedoType(input, typeSpeed = 50) {
+function usePsuedoType(input, typeSpeed = 75) {
     const [curString, setCurString] = useState(CURSOR);
     const curTimeout = useRef(null);
     const i = useRef(0);

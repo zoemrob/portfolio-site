@@ -1,7 +1,6 @@
 import React from 'react';
 import SkillsHolder from './SkillHolder';
 import ImageContainer from '../ImageContainer';
-import PsuedoTyped from '../PsuedoTyped';
 import {makeSkill} from "./Skill";
 import {makeAward} from "./Award";
 import IconHolder from "../IconHolder";
@@ -73,7 +72,7 @@ const Home = () => {
                     {/*blinkOnFinish={false}*/}
                     {/*$props={{className: 'home-typed'}}*/}
                 {/*/>*/}
-                <p>{typedVal}</p>
+                <p className="home-typed">{typedVal}</p>
                 <IconHolder/>
             </div>
             <div className="skill-container">
