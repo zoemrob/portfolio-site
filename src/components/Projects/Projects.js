@@ -1,5 +1,5 @@
 import React from 'react';
-import {withLazyLoad} from "../withLazyLoad";
+import {useLazyLoad} from "../../hooks/useLazyLoad";
 import Project from "./Project";
 import '../../styles/Projects.css';
 import {makeIdWithMixin} from "../../utils";
@@ -28,8 +28,10 @@ const projectData = [
         liveLink: 'https://zoemrob-my-reads.now.sh'
     }
 ];
-
+// currently only if projects should change which is static
 const Projects = () => {
+    useLazyLoad(projectData);
+
     return (
         <main>
             <ul className="project-list">
@@ -43,5 +45,4 @@ const Projects = () => {
     );
 };
 
-const LazyProjects = withLazyLoad(Projects);
-export default LazyProjects;
+export default Projects;

@@ -6,6 +6,7 @@ import {makeSkill} from "./Skill";
 import {makeAward} from "./Award";
 import IconHolder from "../IconHolder";
 import '../../styles/Home.css';
+import usePsuedoType from "../../hooks/usePseudoType";
 
 const skillsTech = [
     {name: 'JavaScript (ES6/7, Node.js)', exp: 1},
@@ -52,40 +53,45 @@ const imgSizes = [
     '(min-width: 1024px) 800px',
 ];
 
-const Home = () => (
-    <main>
-        <div className="personal-container">
-            <ImageContainer
-                figId="personal-img"
-                figCap="Front End Web Developer"
-                figCapPos="top"
-                imgAlt="A photo of Zoe Robertson"
-                imgSizes={imgSizes}
-                imgSrcSet={imgSrcSet}
-            />
-            <PsuedoTyped
-                input='You can use JavaScript for that...'
-                node="p"
-                blinkOnFinish={false}
-                $props={{className: 'home-typed'}}
-            />
-            <IconHolder/>
-        </div>
-        <div className="skill-container">
-            <SkillsHolder id="tech-skills" skillsTitle="Technologies">
-                {skillsTech.map(makeSkill)}
-            </SkillsHolder>
-            <SkillsHolder id="soft-skills" skillsTitle="Soft Skills">
-                {skillsSoft.map(makeSkill)}
-            </SkillsHolder>
-            <SkillsHolder id="certificates" skillsTitle="Certifications & Awards">
-                {awards.map(makeAward)}
-            </SkillsHolder>
-            <footer>
-                <div className="footer">Zoe Robertson 2018</div>
-            </footer>
-        </div>
-    </main>
-);
+const Home = () => {
+    const typedVal = usePsuedoType('You can use JavaScript for that...');
+
+    return (
+        <main>
+            <div className="personal-container">
+                <ImageContainer
+                    figId="personal-img"
+                    figCap="Front End Web Developer"
+                    figCapPos="top"
+                    imgAlt="A photo of Zoe Robertson"
+                    imgSizes={imgSizes}
+                    imgSrcSet={imgSrcSet}
+                />
+                {/*<PsuedoTyped*/}
+                    {/*input='You can use JavaScript for that...'*/}
+                    {/*node="p"*/}
+                    {/*blinkOnFinish={false}*/}
+                    {/*$props={{className: 'home-typed'}}*/}
+                {/*/>*/}
+                <p>{typedVal}</p>
+                <IconHolder/>
+            </div>
+            <div className="skill-container">
+                <SkillsHolder id="tech-skills" skillsTitle="Technologies">
+                    {skillsTech.map(makeSkill)}
+                </SkillsHolder>
+                <SkillsHolder id="soft-skills" skillsTitle="Soft Skills">
+                    {skillsSoft.map(makeSkill)}
+                </SkillsHolder>
+                <SkillsHolder id="certificates" skillsTitle="Certifications & Awards">
+                    {awards.map(makeAward)}
+                </SkillsHolder>
+                <footer>
+                    <div className="footer">Zoe Robertson - 2018</div>
+                </footer>
+            </div>
+        </main>
+    );
+}
 
 export default Home;

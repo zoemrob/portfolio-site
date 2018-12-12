@@ -1,6 +1,6 @@
-import React from 'react';
+import {useEffect} from 'react';
 
-function lazyLoad() {
+const lazyLoad = () => {
     let lazyImages = [].slice.call(document.querySelectorAll("img.lazy"));
 
     if ("IntersectionObserver" in  window) {
@@ -54,13 +54,8 @@ function lazyLoad() {
         window.addEventListener("resize", lazyLoader);
         window.addEventListener("orientationchange", lazyLoader);
     }
-}
+};
 
-export function withLazyLoad(WrappedComponent) {
-    return (props) => (
-        <WrappedComponent
-            onComponentDidMount={lazyLoad}
-            {...props}
-        />
-    );
+export function useLazyLoad(props) {
+    useEffect(lazyLoad, [props]);
 }

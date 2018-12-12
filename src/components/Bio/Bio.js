@@ -59,7 +59,7 @@ const Bio = () => (
         </section>
         <footer>
             <IconHolder/>
-            <div className="footer">Zoe Robertson 2018</div>
+            <div className="footer">Zoe Robertson - 2018</div>
         </footer>
     </main>
 );

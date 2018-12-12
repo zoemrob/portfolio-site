@@ -1,14 +1,33 @@
-import React from 'react';
+import React, {useState, useEffect, useRef} from 'react';
 import {Link} from 'react-router-dom';
 import HamburgerIcon from './HamburgerIcon';
 import '../styles/Header.css';
+import useHandlerCache from "../hooks/useHandlerCache";
 
 const navItemClass = "nav-item";
 const openClass = "nav-open";
-const allNavClasses = [navItemClass, openClass];
-export const navClasses = allNavClasses.join(' ');
+const burgerId = "hamburger-btn";
 
-const Header = ({navOpen, handler}) => {
+//todo: see if I can cache the handlers with the useHandlerCache
+const Header = (props) => {
+    const [cache, addToCache] = useHandlerCache();
+
+    const [navOpen, setNavOpen] = useState(false);
+
+    const childHandler = () => setNavOpen(!navOpen);
+    const checkOutsideClick = e => {
+        if (e.target.id !== burgerId && e.target.parentElement.id !== burgerId) {
+            setNavOpen(false);
+        }
+    };
+
+    useEffect(() => {
+        document.addEventListener('click', checkOutsideClick);
+        return function cleanup() {
+            document.removeEventListener('click', checkOutsideClick);
+        }
+    }, []);
+
     const liClass = navItemClass + (navOpen ? " " + openClass : "");
     const headerClass = "App-header" + (navOpen ? " " + openClass : '');
     return (
@@ -23,7 +42,7 @@ const Header = ({navOpen, handler}) => {
                     <li className={liClass}><Link to="/projects">Projects</Link></li>
                     <li className={liClass}><Link to="/contact">Contact</Link></li>
                 </ul>
-                <HamburgerIcon navOpen={navOpen} handler={handler}/>
+                <HamburgerIcon navOpen={navOpen} handler={childHandler} />
             </nav>
         </header>
     );

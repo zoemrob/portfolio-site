@@ -23,6 +23,8 @@ export default class PsuedoTyped extends Component {
         this.state = {
             curString: PsuedoTyped.CURSOR
         };
+
+        this.i = 0;
     }
 
     /**
@@ -37,7 +39,7 @@ export default class PsuedoTyped extends Component {
      * @param i {Number}
      * @return void
      */
-    _psuedoType(inputString, i = 0) {
+    _psuedoType(inputString) {
         const inputLen = inputString.length;
         // trim cursor character
         const curString = this.state.curString.slice(0, -1);
@@ -46,15 +48,15 @@ export default class PsuedoTyped extends Component {
         if (inputLen > strLen) {
             const {typeSpeed} = this.props;
             // append next character and cursor
-            const newStr = curString + inputString[i] + PsuedoTyped.CURSOR;
-            i++;
+            const newStr = curString + inputString[this.i] + PsuedoTyped.CURSOR;
+            this.i++;
 
             // if final sequence, queue up last character 200ms later
             if (inputLen - strLen === 1) {
                 setTimeout(() => {
                     if (this._isMounted) {
                         this.setState({curString: inputString + PsuedoTyped.CURSOR});
-                        this._psuedoType(inputString);
+                        //this._psuedoType(inputString);
                     }
                 }, (typeSpeed * 2));
 
@@ -62,7 +64,7 @@ export default class PsuedoTyped extends Component {
                 setTimeout(() => {
                     if (this._isMounted) {
                         this.setState({curString: newStr});
-                        this._psuedoType(inputString, i);
+                        //this._psuedoType(inputString, i);
                     }
                 }, typeSpeed);
             }
@@ -74,7 +76,7 @@ export default class PsuedoTyped extends Component {
                 setTimeout(() => {
                     if (this._isMounted) {
                         this.setState({curString: inputString + ' '});
-                        this._psuedoType(inputString);
+                        //this._psuedoType(inputString);
                     }
                 }, blinkSpeed);
 
@@ -82,7 +84,7 @@ export default class PsuedoTyped extends Component {
                 setTimeout(() => {
                     if (this._isMounted) {
                         this.setState({curString: inputString + PsuedoTyped.CURSOR});
-                        this._psuedoType(inputString);
+                        //this._psuedoType(inputString);
                     }
                 }, blinkSpeed);
             }
@@ -93,6 +95,12 @@ export default class PsuedoTyped extends Component {
         this._isMounted = true;
         // start method
         this._psuedoType(this.props.input);
+    }
+
+    componentDidUpdate(prevProps, prevState) {
+        if (this.state.curString !== prevState.curString) {
+            this._psuedoType(this.props.input);
+        }
     }
 
     componentWillUnmount() {
