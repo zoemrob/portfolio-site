@@ -13,7 +13,10 @@ const Header = React.memo(() => {
     const childHandler = () => setNavOpen(!navOpen);
 
     const checkOutsideClick = useCallback(e => {
-        if (e.target.id !== burgerId && e.target.parentElement.id !== burgerId) {
+        if (e.target.parentElement === null || (
+            e.target.id !== burgerId &&
+            e.target.parentElement.id !== burgerId)
+        ) {
             setNavOpen(false);
         }
     }, [setNavOpen]);
