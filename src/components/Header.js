@@ -1,25 +1,22 @@
-import React, {useState, useEffect, useRef} from 'react';
+import React, {useState, useEffect, useCallback} from 'react';
 import {Link} from 'react-router-dom';
 import HamburgerIcon from './HamburgerIcon';
 import '../styles/Header.css';
-import useHandlerCache from "../hooks/useHandlerCache";
 
 const navItemClass = "nav-item";
 const openClass = "nav-open";
 const burgerId = "hamburger-btn";
 
-//todo: see if I can cache the handlers with the useHandlerCache
-const Header = (props) => {
-    const [cache, addToCache] = useHandlerCache();
-
+const Header = React.memo(() => {
     const [navOpen, setNavOpen] = useState(false);
 
     const childHandler = () => setNavOpen(!navOpen);
-    const checkOutsideClick = e => {
+
+    const checkOutsideClick = useCallback(e => {
         if (e.target.id !== burgerId && e.target.parentElement.id !== burgerId) {
             setNavOpen(false);
         }
-    };
+    }, [setNavOpen]);
 
     useEffect(() => {
         document.addEventListener('click', checkOutsideClick);
@@ -46,5 +43,5 @@ const Header = (props) => {
             </nav>
         </header>
     );
-};
+});
 export default Header;

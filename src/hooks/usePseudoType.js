@@ -1,5 +1,4 @@
 import {useEffect, useState, useRef} from 'react';
-import PsuedoTyped from "../components/PsuedoTyped";
 
 const CURSOR = '|';
 
@@ -27,7 +26,7 @@ function usePsuedoType(input, typeSpeed = 75) {
                 }, typeSpeed);
             }
         } else {
-            if (curString.slice(-1) === PsuedoTyped.CURSOR) {
+            if (curString.slice(-1) === CURSOR) {
                 curTimeout.current = setTimeout(() => {
                     setCurString(input + ' ');
                 }, typeSpeed);
