@@ -4,6 +4,7 @@ import {Helmet} from 'react-helmet';
 import Home from "./components/Home/Home";
 import Bio from "./components/Bio/Bio";
 import Projects from "./components/Projects/Projects";
+import Contact from "./components/Contact/Contact";
 import {prefix} from './components/ImageContainer';
 import './App.css';
 import Header from "./components/Header";
@@ -17,6 +18,7 @@ const App = () => (
         <Route exact path="/" component={Home} />
         <Route path="/bio" component={Bio} />
         <Route path="/projects" component={Projects} />
+        <Route path="/contact" component={Contact}/>
     </div>
 );
 
