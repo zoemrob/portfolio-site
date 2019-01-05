@@ -27,7 +27,7 @@ div.form-container {
 }
 
 .form-container form fieldset > * {
-    margin-top: 1rem;
+    margin-top: 16px;
 }
 
 .form-container textarea {

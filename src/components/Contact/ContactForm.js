@@ -124,7 +124,10 @@ const ContactForm = React.memo(() => {
                     required
                     disabled={waiting}
                 />
-                <span className="pure-form-message error">{!empty(validationErrors.email) ? validationErrors : null}</span>
+                <span
+                    className="pure-form-message error"
+                    style={empty(validationErrors.email) ? {display: 'none'} : null}
+                >{validationErrors.email}</span>
                 <select
                     value={formData.projectType}
                     onChange={onSelectChange}
@@ -137,7 +140,10 @@ const ContactForm = React.memo(() => {
                     <option value="fsa">Full Stack Application</option>
                     <option value="website">Static Website (ex. Blog)</option>
                 </select>
-                <span className="pure-form-message error">{!empty(validationErrors.projectType) ? validationErrors.projectType : null}</span>
+                <span
+                    className="pure-form-message error"
+                    style={empty(validationErrors.projectType) ? {display: 'none'} : null}
+                >{validationErrors.projectType}</span>
                 <textarea
                     onChange={onInputChange}
                     placeholder="Tell me a little about your project"
@@ -147,7 +153,10 @@ const ContactForm = React.memo(() => {
                     required
                     disabled={waiting}
                 />
-                <span className="pure-form-message error">{!empty(validationErrors.details) ? validationErrors.details : null}</span>
+                <span
+                    className="pure-form-message error"
+                    style={empty(validationErrors.details) ? {display: 'none'} : null}
+                >{validationErrors.details}</span>
                 <button type="submit" className="pure-button pure-button-primary">Submit</button>
             </fieldset>
         </form>
