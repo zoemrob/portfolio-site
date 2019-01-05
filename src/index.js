@@ -4,6 +4,7 @@ import {BrowserRouter} from 'react-router-dom';
 import './index.css';
 import 'purecss/build/forms-min.css';
 import 'purecss/build/buttons-min.css';
+import 'purecss/build/grids-responsive-min.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 

@@ -1,10 +1,12 @@
 import React, {useCallback, useState} from 'react';
 import {empty} from "../../utils";
+import {postForm} from "../../api";
 
 const projectTypes = [
     'spa',
     'fsa',
-    'website'
+    'website',
+    'custom'
 ];
 
 const noValidationErrors = {
@@ -52,9 +54,16 @@ const ContactForm = React.memo(() => {
         details: ''
     });
 
-    const [validationErrors, setValidationErrors] = useState(noValidationErrors);
+    const clearForm = useCallback(() => setFormData({
+        email: '',
+        projectType: '',
+        details: ''
+    }), [setFormData]);
 
+    const [validationErrors, setValidationErrors] = useState(noValidationErrors);
     const [waiting, setWaiting] = useState(false);
+    // 0 = empty, 1 = success, 2 = error
+    const [apiResponse, setApiResponse] = useState({type: 0, message: ''});
 
     const onInputChange = useCallback(e => {
         e.preventDefault();
@@ -80,6 +89,7 @@ const ContactForm = React.memo(() => {
                 details: ''
             });
         }
+        setApiResponse({type: 0, message: ''});
     }, [formData, validationErrors]);
 
     const onSelectChange = useCallback(e => {
@@ -91,7 +101,8 @@ const ContactForm = React.memo(() => {
         setValidationErrors({
             ...validationErrors,
             projectType: ''
-        })
+        });
+        setApiResponse({type: 0, message: ''});
     }, [formData]);
 
     const onFormSubmit = useCallback(e => {
@@ -100,10 +111,25 @@ const ContactForm = React.memo(() => {
         const [isValid, errors] = validateForm(formData);
 
         if (isValid) {
-            // todo:: post to api
             console.log('valid form!', formData);
             setWaiting(true);
-            setTimeout(() => setWaiting(false), 2000);
+
+            postForm(formData)
+                .then(data => {
+                    setWaiting(false);
+                    if (data.err) {
+                        console.log('error', data);
+                        setApiResponse({type: 2, message: 'Hmm... something went wrong, please verify a valid email address.'});
+                        return;
+                    }
+                    setApiResponse({type: 1, message: data.message});
+                    clearForm();
+                })
+                .catch(e => {
+                    console.log(e);
+                    setApiResponse({type: 2, message: 'Connectivity is poor. Check your connection.'});
+                });
+
         } else {
             setValidationErrors(errors);
         }
@@ -111,8 +137,13 @@ const ContactForm = React.memo(() => {
 
     return (
         <form className="pure-form pure-form-stacked" onSubmit={onFormSubmit}>
+            {(!waiting && apiResponse.type !== 0) && (
+                <div className="pure-g">
+                    <div className={apiResponse.type === 1 ? 'pure-u-1 api-success' : 'pure-u-1 api-error'}>{apiResponse.message}</div>
+                </div>
+            )}
             <fieldset>
-                <label id="email-label" htmlFor="email">Where can I reach ya?</label>
+                <label id="email-label" htmlFor="email">Where can I reach you?</label>
                 <input
                     onChange={onInputChange}
                     placeholder="john.doe@example.com"
@@ -139,6 +170,7 @@ const ContactForm = React.memo(() => {
                     <option value="spa">Single Page Application</option>
                     <option value="fsa">Full Stack Application</option>
                     <option value="website">Static Website (ex. Blog)</option>
+                    <option value="custom">Something else</option>
                 </select>
                 <span
                     className="pure-form-message error"
@@ -146,7 +178,7 @@ const ContactForm = React.memo(() => {
                 >{validationErrors.projectType}</span>
                 <textarea
                     onChange={onInputChange}
-                    placeholder="Tell me a little about your project"
+                    placeholder="Tell me a little about your project."
                     value={formData.details}
                     name="details"
                     className="pure-input-1"
@@ -157,7 +189,11 @@ const ContactForm = React.memo(() => {
                     className="pure-form-message error"
                     style={empty(validationErrors.details) ? {display: 'none'} : null}
                 >{validationErrors.details}</span>
-                <button type="submit" className="pure-button pure-button-primary">Submit</button>
+                <button
+                    type="submit"
+                    className="pure-button pure-button-primary"
+                    disabled={waiting}
+                >Submit</button>
             </fieldset>
         </form>
     );

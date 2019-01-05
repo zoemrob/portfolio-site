@@ -38,6 +38,23 @@ div.form-container {
     color: red;
 }
 
+.form-container div.api-success,
+.form-container div.api-error {
+    font-size: 1.7rem;
+    padding: 1rem;
+    border-radius: 10px;
+}
+
+.form-container div.api-success {
+    background-color: rgba(46, 232, 138, 0.5);
+    border: rgba(46, 232, 138, 0.7);
+}
+
+.form-container div.api-error {
+    background-color: rgba(255, 64, 65, 0.3);
+    border: 1px solid rgba(255, 64, 65, 0.5);
+}
+
 @media screen and (max-width: 700px)  {
 
 }
