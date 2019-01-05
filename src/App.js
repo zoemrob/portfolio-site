@@ -6,7 +6,6 @@ import Bio from "./components/Bio/Bio";
 import Projects from "./components/Projects/Projects";
 import Contact from "./components/Contact/Contact";
 import {prefix} from './components/ImageContainer';
-import './App.css';
 import Header from "./components/Header";
 
 const App = () => (

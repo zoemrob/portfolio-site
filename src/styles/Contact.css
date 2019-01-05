@@ -1,0 +1,55 @@
+main {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+div.tidbit,
+div.form-container {
+    margin: auto;
+}
+
+div.tidbit {
+    order: 1;
+}
+
+div.form-container {
+    order: 2;
+    text-align: center;
+}
+
+.form-container form {
+    margin: auto;
+    text-align: left;
+}
+
+.form-container form label {
+    font-size: 1.1rem;
+}
+
+.form-container form fieldset > * {
+    margin-top: 1rem;
+}
+
+.form-container textarea {
+    min-height: 300px;
+}
+
+.form-container span.pure-form-message.error {
+    color: red;
+}
+
+@media screen and (max-width: 700px)  {
+
+}
+
+@media screen and (min-width: 701px) {
+    div.tidbit,
+    div.form-container {
+        width: 50%;
+    }
+
+    .form-container form {
+        width: 60%;
+        margin: auto;
+    }
+}
