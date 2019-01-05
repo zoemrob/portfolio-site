@@ -65,7 +65,7 @@ main {
 
 .bio-art a {
     text-decoration: none;
-    font-size: 1.1em;
+    /*font-size: 1.1em;*/
     color: #0044bf;
 }
 
@@ -80,7 +80,7 @@ main {
     font-size: 1.3rem;
     line-height: 2rem;
     text-indent: 2rem;
-    text-align: justify;
+    text-align: left;
 }
 
 /** First paragraph */
@@ -114,6 +114,7 @@ main {
 }
 
 .bio-art li:first-child::after {
+    right: -1rem;
     content: "?:";
 }
 
