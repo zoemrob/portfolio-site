@@ -2,6 +2,7 @@ import React, {useCallback, useState} from 'react';
 import {empty} from "../../utils";
 import {postForm} from "../../api";
 
+/** @var {Array<String>} list of valid project types */
 const projectTypes = [
     'spa',
     'fsa',
@@ -9,16 +10,23 @@ const projectTypes = [
     'custom'
 ];
 
+/** @var {Object} blank template for resetting */
 const noValidationErrors = {
     email: '',
     projectType: '',
     details: ''
 };
 
+/**
+ * Validates form, returns valid status
+ * @param data {Object} form data from state
+ * @return {Array<Boolean>, <Object>}
+ */
 function validateForm(data) {
     let isValid = true;
     let errors = {...noValidationErrors};
 
+    // Visible error messages
     const errorMessages = {
         email: 'Email is required and must be valid.',
         projectType: 'Please select an option.',
@@ -39,6 +47,7 @@ function validateForm(data) {
         }
     });
 
+    // if there are errors, map them into the errors object
     if (invalid.length > 0) {
         isValid = false;
         invalid.forEach(field => errors[field] = errorMessages[field])
@@ -47,24 +56,53 @@ function validateForm(data) {
     return [isValid, errors];
 }
 
+/**
+ * ContactForm Controlled Form Component
+ * memoized
+ * @constructor
+ */
 const ContactForm = React.memo(() => {
+    /**
+     * @var formData {Object} current state of form
+     * @var setFormData {Function} update formData
+     */
     const [formData, setFormData] = useState({
         email: '',
         projectType: '',
         details: ''
     });
 
+    /**
+     * @function clearForm - sets form state back to initial
+     */
     const clearForm = useCallback(() => setFormData({
         email: '',
         projectType: '',
         details: ''
     }), [setFormData]);
 
+    /**
+     * @var validationErrors {Object} current state of form validation errors
+     * @var setValidationErrors {Function} update validationErrors
+     */
     const [validationErrors, setValidationErrors] = useState(noValidationErrors);
+
+    /**
+     * @var waiting {Boolean} if api response is pending, used to render form disabled
+     * @var setWaiting {Function} used to set waiting status
+     */
     const [waiting, setWaiting] = useState(false);
-    // 0 = empty, 1 = success, 2 = error
+
+    /**
+     * type: 0 = no response, 1 = success, 2 = error
+     * @var apiResponse {Object} contains api response status and message
+     * @var setApiResponse {Function} sets apiResponse
+     */
     const [apiResponse, setApiResponse] = useState({type: 0, message: ''});
 
+    /**
+     * @function onInputChange - event handler for input elements, sets formData and resets validationErrors
+     */
     const onInputChange = useCallback(e => {
         e.preventDefault();
 
@@ -89,9 +127,14 @@ const ContactForm = React.memo(() => {
                 details: ''
             });
         }
+
+        // always set apiResponse to empty on input change
         setApiResponse({type: 0, message: ''});
     }, [formData, validationErrors]);
 
+    /**
+     * @function onSelectChange: event handler for <select> element
+     */
     const onSelectChange = useCallback(e => {
         e.preventDefault();
         setFormData({
@@ -102,9 +145,15 @@ const ContactForm = React.memo(() => {
             ...validationErrors,
             projectType: ''
         });
+
+        // always set apiResponse to empty on select change
         setApiResponse({type: 0, message: ''});
     }, [formData]);
 
+    /**
+     * @function onFormSubmit: event handler for form.
+     *  validates form, sets errors if invalid, posts data if valid, sets api response
+     */
     const onFormSubmit = useCallback(e => {
         e.preventDefault();
 
@@ -112,10 +161,13 @@ const ContactForm = React.memo(() => {
 
         if (isValid) {
             console.log('valid form!', formData);
+            // disable form while waiting response
             setWaiting(true);
 
             postForm(formData)
+                .then(res => res.json())
                 .then(data => {
+                    // enable form
                     setWaiting(false);
                     if (data.err) {
                         console.log('error', data);
@@ -127,10 +179,13 @@ const ContactForm = React.memo(() => {
                 })
                 .catch(e => {
                     console.log(e);
+                    // enable form
+                    setWaiting(false);
                     setApiResponse({type: 2, message: 'Connectivity is poor. Check your connection.'});
                 });
 
         } else {
+            // if invalid, trigger invalid errors
             setValidationErrors(errors);
         }
     }, [formData]);
@@ -152,6 +207,7 @@ const ContactForm = React.memo(() => {
                     name="email"
                     id="email"
                     className="pure-input-1"
+                    value={formData.email}
                     required
                     disabled={waiting}
                 />
