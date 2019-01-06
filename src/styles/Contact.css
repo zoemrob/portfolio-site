@@ -13,6 +13,7 @@ div.tidbit {
 }
 
 div.form-container {
+    padding: 1em;
     order: 2;
     text-align: center;
 }
