@@ -2,6 +2,8 @@ import React from 'react';
 import {useLazyLoad} from "../../hooks/useLazyLoad";
 import Project from "./Project";
 import '../../styles/Projects.css';
+import 'purecss/build/grids-min.css';
+import 'purecss/build/grids-responsive-min.css';
 import {makeIdWithMixin} from "../../utils";
 
 const projectData = [
@@ -9,7 +11,7 @@ const projectData = [
         title: 'Neighborhood Map',
         desc: 'A React.js Progressive Web App utilizing Google Maps and Yelp APIs',
         repoLink: 'neighborhood-map',
-        liveLink: 'https://zoemrob-gladstone-map.now.sh'
+        //liveLink: 'https://zoemrob-gladstone-map.now.sh'
     },
     {
         title: 'Restaurant Reviews',
@@ -25,7 +27,7 @@ const projectData = [
         title: 'MyReads App',
         desc: 'A React app which demonstrates working with poorly structured API data...',
         repoLink: 'my-reads-app',
-        liveLink: 'https://zoemrob-my-reads.now.sh'
+        //liveLink: 'https://zoemrob-my-reads.now.sh'
     }
 ];
 // currently only if projects should change which is static
@@ -33,14 +35,17 @@ const Projects = () => {
     useLazyLoad(projectData);
 
     return (
-        <main>
-            <ul className="project-list">
+        <main className="pure-g">
+            <ul className="pure-g pure-u-md-2-3 pure-u-sm-1">
                 {projectData.map(proj => (
                     <Project key={makeIdWithMixin(proj.title, 'project')}
                              {...proj}
                     />
                 ))}
             </ul>
+            <footer className="pure-u">
+                <div className="footer">Zoe Robertson - 2018</div>
+            </footer>
         </main>
     );
 };

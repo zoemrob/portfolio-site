@@ -12,6 +12,9 @@ const Contact = () => (
         <div className="form-container">
             <ContactForm />
         </div>
+        <footer className="pure-u">
+            <div className="footer">Zoe Robertson - 2018</div>
+        </footer>
     </main>
 );
 

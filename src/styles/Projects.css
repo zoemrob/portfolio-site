@@ -2,87 +2,27 @@ main {
     text-align: center;
 }
 
-.project-list {
+main ul {
     list-style-type: none;
-    width: 80%;
-    padding: 1rem;
-    margin: 0 auto;
+    padding-left: 0;
+    margin: auto;
 }
 
 .project-item {
-    width: 100%;
-    margin: 1rem auto;
-    min-height: 300px;
-    display: flex;
-    flex-wrap: wrap;
-}
-
-.project-item:nth-child(even) .box-1,
-.project-item:nth-child(odd) .box-2 {
-    order: 2;
-    margin-left: .5rem;
-}
-
-.project-item:nth-child(odd) .box-1,
-.project-item:nth-child(even) .box-2 {
-    order: 1;
-    margin-right: .5rem;
-}
-
-.box-1,
-.box-2 {
-    border-radius: 15px;
-}
-
-.box-2 {
+    min-height: 8em;
+    margin-bottom: 2em;
     background-color: #e6eeff;
+    padding: 2em 1em;
 }
 
-.box-1 {
-    width: calc(50% - .5rem);
-    background-color: rgba(0,0,0,0.1);
+.project-item:first-child {
+    margin-top: 2em;
 }
 
-.box-1 h3.only-title {
-    font-size: 3.5rem;
-    line-height: 3.5rem;
-    margin: 0 auto;
-    padding: calc((300px - 3.5rem) / 2) 0;
+.project-item h3 {
+    font-size: 2em;
 }
 
-.box-2 {
-    width: calc(50% - 4.5rem);
-    padding: 2rem;
-    display: flex;
-    flex-wrap: wrap;
-    text-align: center;
-}
-
-.box-2 .project-desc,
-.box-2 .repo-icon-holder {
-    width: 100%;
-}
-
-.box-2 .project-desc {
-    order: 1;
-    font-size: 2rem;
-}
-
-.box-2 .repo-icon-holder {
-    order: 2;
-}
-
-.box-2 .live-link {
-    margin: auto;
-    order: 3;
-}
-
-@media screen and (max-width: 700px) {
-    .project-list {
-        width: 100%;
-    }
-
-    .project-item {
-
-    }
+.repo-icon-holder .icon-label {
+    display: none;
 }

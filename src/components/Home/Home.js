@@ -66,12 +66,6 @@ const Home = () => {
                     imgSizes={imgSizes}
                     imgSrcSet={imgSrcSet}
                 />
-                {/*<PsuedoTyped*/}
-                    {/*input='You can use JavaScript for that...'*/}
-                    {/*node="p"*/}
-                    {/*blinkOnFinish={false}*/}
-                    {/*$props={{className: 'home-typed'}}*/}
-                {/*/>*/}
                 <p className="home-typed">{typedVal}</p>
                 <IconHolder/>
             </div>
