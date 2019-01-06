@@ -11,11 +11,11 @@ header {
 
 header h1 {
     order: 1;
-    padding: 1.5rem 0 1.5rem 2.5rem;
+    padding: 1.5vh 0 1.5vh 2.5rem;
     width: 50%;
     margin: 0;
     color: #222;
-    font-size: 3rem;
+    font-size: 7vh;
     font-family: 'Gentium Book Basic', 'Times New Roman', serif;
 }
 
