@@ -1,0 +1,207 @@
+main {
+    text-align: center;
+    width: 100%;
+    overflow: auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.bio-container {
+    order: 1;
+    margin: 0 auto;
+    text-align: inherit;
+    width: 100%;
+    font-family: 'Open Sans', 'Arial', sans-serif;
+}
+
+.bio-header {
+    margin: 0;
+    padding: 0.75em 0;
+    font-family: 'Gentium Book Basic', 'Times New Roman', serif;
+    font-size: 4rem;
+}
+
+#portland-pic {
+    margin: 0 auto;
+}
+
+#portland-pic img {
+    max-width: 100%;
+}
+
+#portland-pic figcaption {
+    font-weight: bold;
+    padding: 1rem 2rem;
+    font-size: 1.3rem;
+    position: relative;
+    z-index: 1;
+}
+
+#portland-pic figcaption::before,
+#portland-pic figcaption::after {
+    content: '"';
+    font-size: 10rem;
+    font-style: italic;
+    font-weight: initial;
+    position: absolute;
+    color: rgba(0,0,0,0.13);
+    z-index: -1;
+}
+
+#portland-pic figcaption::before {
+    left: 0;
+    top: -0.30em;
+}
+
+#portland-pic figcaption::after {
+    right: 3rem;
+    top: -0.20em;
+}
+
+/** article.bio-art section */
+.bio-art {
+    margin-bottom: 3rem;
+}
+
+.bio-art a {
+    text-decoration: none;
+    /*font-size: 1.1em;*/
+    color: #0044bf;
+}
+
+.bio-art h3 {
+    font-size: 2rem;
+    font-weight: initial;
+}
+
+.bio-art p {
+    width: 90%;
+    margin: auto;
+    font-size: 1.3rem;
+    line-height: 2rem;
+    text-indent: 2rem;
+    text-align: left;
+}
+
+/** First paragraph */
+.bio-art ul {
+    list-style-type: none;
+    font-size: 1.3rem;
+    line-height: 2rem;
+    text-indent: 2rem;
+    width: 90%;
+    margin-top: 0;
+    padding: 1rem;
+}
+
+.bio-art li {
+    position: relative;
+    font-family: Monospaced, sans-serif;
+}
+
+.bio-art li::before {
+    content: '\A';
+    white-space: pre;
+}
+
+.bio-art li:first-child::after,
+.bio-art li:nth-child(2)::after,
+.bio-art li:last-child::after {
+    position: absolute;
+    margin: 0;
+    font-size: 3rem;
+    color: rgba(0,0,0,0.15);
+}
+
+.bio-art li:first-child::after {
+    right: -1rem;
+    content: "?:";
+}
+
+.bio-art li:nth-child(2)::after {
+    left: -2rem;
+    content: '&&';
+}
+
+.bio-art li:last-child::after {
+    content: '||';
+}
+
+.bio-art span:first-child {
+    font-size: larger;
+    font-weight: bold;
+}
+
+#p2,
+#p3,
+#p4 {
+    margin: 0.5rem auto;
+}
+
+#p-footer {
+    font-family: 'Gentium Book Basic', 'Times New Roman', serif;
+    font-size: 2rem;
+}
+
+footer {
+    order: 2;
+    width: 100%;
+}
+
+@media screen and (max-width: 460px) {
+    #portland-pic figcaption {
+        font-size: 0.9rem;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .bio-header {
+        font-size: 2.5rem;
+        background-color: #e6eeff;
+    }
+
+    #portland-pic {
+        padding: 0;
+        width: 100%;
+        margin: 0;
+    }
+
+    #portland-pic img {
+        width: 100%;
+    }
+
+    #portland-pic figcaption {
+        font-size: 1rem;
+    }
+
+    .bio-art p {
+        font-size: 1rem;
+    }
+
+    #p-footer {
+        font-size: 1.5rem;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .bio-container {
+        width: 80%;
+        max-width: 1200px;
+    }
+
+    #portland-pic figcaption {
+        width: 60%;
+        margin: 2rem auto;
+    }
+
+    .bio-art p {
+        line-height: 2rem;
+    }
+
+    .bio-art p {
+        width: 75%;
+    }
+}
+
+
+

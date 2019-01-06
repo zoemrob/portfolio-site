@@ -1,0 +1,92 @@
+main {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+div.tidbit,
+div.form-container {
+    margin: auto;
+}
+
+div.tidbit {
+    order: 1;
+}
+
+div.form-container {
+    order: 2;
+    text-align: center;
+}
+
+.tidbit h2 {
+    font-weight: normal;
+    font-family: 'Gentium Book Basic', 'Times New Roman', serif;
+}
+
+.tidbit h2 span {
+    font-size: larger;
+    /*background-color: #d0e1ff;*/
+}
+
+.tidbit h2 span::before {
+    content: "\A";
+    white-space: pre;
+}
+
+.form-container form {
+    margin: auto;
+    text-align: left;
+}
+
+.form-container form label {
+    font-size: 1.1rem;
+}
+
+.form-container form fieldset > * {
+    margin-top: 16px;
+}
+
+.form-container textarea {
+    min-height: 300px;
+}
+
+.form-container span.pure-form-message.error {
+    color: red;
+}
+
+.form-container div.api-success,
+.form-container div.api-error {
+    font-size: 1.7rem;
+    padding: 1rem;
+    border-radius: 10px;
+}
+
+.form-container div.api-success {
+    background-color: rgba(46, 232, 138, 0.5);
+    border: rgba(46, 232, 138, 0.7);
+}
+
+.form-container div.api-error {
+    background-color: rgba(255, 64, 65, 0.3);
+    border: 1px solid rgba(255, 64, 65, 0.5);
+}
+
+@media screen and (max-width: 700px)  {
+
+}
+
+@media screen and (min-width: 701px) {
+    div.tidbit,
+    div.form-container {
+        width: 50%;
+    }
+
+    .tidbit h2 {
+        font-size: 3rem;
+        padding: 3rem;
+    }
+
+    .form-container form {
+        width: 60%;
+        margin: auto;
+    }
+}

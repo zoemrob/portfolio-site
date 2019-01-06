@@ -1,0 +1,28 @@
+main {
+    text-align: center;
+}
+
+main ul {
+    list-style-type: none;
+    padding-left: 0;
+    margin: auto;
+}
+
+.project-item {
+    min-height: 8em;
+    margin-bottom: 2em;
+    background-color: #e6eeff;
+    padding: 2em 1em;
+}
+
+.project-item:first-child {
+    margin-top: 2em;
+}
+
+.project-item h3 {
+    font-size: 2em;
+}
+
+.repo-icon-holder .icon-label {
+    display: none;
+}

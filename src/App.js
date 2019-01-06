@@ -1,45 +1,24 @@
-import {Component} from 'inferno';
-import {Route} from 'inferno-router';
-import * as utils from './utils';
-import Header from './components/Header';
-import Home from './components/Home';
-import './App.css';
+import React from 'react';
+import {Route} from 'react-router-dom';
+import {Helmet} from 'react-helmet';
+import Home from "./components/Home/Home";
+import Bio from "./components/Bio/Bio";
+import Projects from "./components/Projects/Projects";
+import Contact from "./components/Contact/Contact";
+import {prefix} from './components/ImageContainer';
+import Header from "./components/Header";
 
-class App extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            viewportSize: utils.checkWidth(),
-        };
-
-        this._isMounted = false;
-    }
-
-    _widthHandler = (e) => {
-        console.log(this.state.viewportSize);
-        this.setState({viewportSize: utils.checkWidth()});
-    };
-
-    componentDidMount() {
-        this._isMounted = true;
-
-        window.addEventListener('resize', this._widthHandler);
-    }
-
-    componentWillUnmount() {
-        this._isMounted = false;
-
-        window.removeEventListener('resize', this._widthHandler);
-    }
-
-    render() {
-        return (
-            <div className="App">
-                <Header />
-                <Route exact path="/" component={Home}/>
-            </div>
-        );
-    }
-}
+const App = () => (
+    <div className="App">
+        <Helmet>
+            <link rel="prefetch" href={prefix("portland-sign_grmtn4_c_scale,w_1271.jpg")}/>
+        </Helmet>
+        <Header/>
+        <Route exact path="/" component={Home} />
+        <Route path="/bio" component={Bio} />
+        <Route path="/projects" component={Projects} />
+        <Route path="/contact" component={Contact}/>
+    </div>
+);
 
 export default App;
