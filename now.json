@@ -1,0 +1,9 @@
+{
+  "version": 2,
+  "name": "zoerobertson",
+  "routes": [
+    {"src":  "/bio", "dest":  "/index.html"},
+    {"src":  "/contact", "dest":  "/index.html"},
+    {"src":  "/projects", "dest":  "/index.html"}
+  ]
+}
