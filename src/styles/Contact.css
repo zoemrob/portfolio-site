@@ -23,9 +23,12 @@ div.form-container {
     text-align: center;
 }
 
+.tidbit {
+    font-family: 'Gentium Book Basic', 'Times New Roman', serif;
+}
+
 .tidbit h2 {
     font-weight: normal;
-    font-family: 'Gentium Book Basic', 'Times New Roman', serif;
 }
 
 .tidbit h2 span {
@@ -36,6 +39,17 @@ div.form-container {
 .tidbit h2 span::before {
     content: "\A";
     white-space: pre;
+}
+
+.tidbit span.resume a {
+    text-decoration: none;
+    font-size: 1.5em;
+    color: #337dff;
+}
+
+.tidbit span.resume a:hover,
+.tidbit span.resume a:active {
+    text-decoration: underline;
 }
 
 .form-container form {

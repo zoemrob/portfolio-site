@@ -8,6 +8,11 @@ const Contact = () => (
             <h2>Looking for project help?
                 <span>Look no more.</span>
             </h2>
+            <span className="resume">
+                <a href={process.env.PUBLIC_URL + '/resume.pdf'}>
+                    Take a look at my resumé.
+                </a>
+            </span>
         </div>
         <div className="form-container">
             <ContactForm />
