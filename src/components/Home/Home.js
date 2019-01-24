@@ -11,6 +11,7 @@ const skillsTech = [
     {name: 'JavaScript (ES6/7, Node.js)', exp: 1},
     {name: 'React.js (& Inferno.js)'},
     {name: 'PHP (7.x)', exp: 1},
+    {name: 'Custom Shopify Themes'},
     {name: 'MongoDB', exp: 1},
     {name: 'JS Build Tools (Gulp.js, Webpack)'},
     {name: 'CSS & CSS Preprocessors'},

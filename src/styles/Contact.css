@@ -12,8 +12,13 @@ div.tidbit {
     order: 1;
 }
 
+@media screen and (max-width: 500px) {
+    div.form-container {
+        padding: 1em;
+    }
+}
 div.form-container {
-    padding: 1em;
+    /*padding: 1em;*/
     order: 2;
     text-align: center;
 }
