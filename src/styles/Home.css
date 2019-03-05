@@ -4,12 +4,15 @@ main {
 
 .personal-container {
     padding-top: 1rem;
+    height: calc(100% - 1rem);
     width: 50%;
     order: 1;
     display: flex;
     flex-wrap: wrap;
     text-align: center;
     font-family: 'Open Sans', sans-serif;
+    position: sticky;
+    top: 0;
 }
 
 .personal-container figure {

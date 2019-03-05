@@ -13,7 +13,7 @@ const ImageContainer = ({figId, imgAlt, imgSrcSet, figCap = '', figCapPos = 'top
             <picture>
                 <img
                     srcSet={imgSrcSet && imgSrcSet.map(prefix).join(',')}
-                    sizes={imgSizes && imgSizes.map(prefix).join(',')}
+                    sizes={imgSizes && imgSizes.join(',')}
                     alt={imgAlt}
                     title={imgAlt}
                     className={lazy ? "lazy" : null}
